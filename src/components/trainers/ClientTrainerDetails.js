@@ -15,7 +15,7 @@ export const ClientTrainerDetails = () => {
     )
 
    return (
-            <div className="pl-6 mt-32 text-3xl flex flex-col gap-5">
+            <div className="pl-6 mt-32 text-3xl flex flex-col gap-5 just">
 
                 {trainers.map((trainer) => {return (
                     <div key= {trainer.id} className="border-2 p-3 w-1/2 flex">
