@@ -36,7 +36,7 @@ const findSessions = () => {
    return (
     <>
                 <div>
-                    You have {todaySessionsArray.length} available session(s) scheduled today.
+                    You have {todaySessionsArray.length} session(s) scheduled today.
                 </div>
     </>
    )
