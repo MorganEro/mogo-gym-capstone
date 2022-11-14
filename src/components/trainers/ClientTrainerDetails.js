@@ -1,43 +1,38 @@
 import { useEffect, useState } from "react"
-import { useParams, useNavigate } from "react-router-dom"
 
 export const ClientTrainerDetails = () => {
 
-    const { trainerId } = useParams()
-    const [trainer, updateTrainer] = useState({})
-    const navigate= useNavigate()
+    const [trainers, setTrainers] = useState([])
 
     useEffect(
         () => {
-            fetch (`http://localhost:8088/users/?isTrainer=true&id=${trainerId}`)
+            fetch (`http://localhost:8088/users/?isTrainer=true`)
             .then(response => response.json())
-            .then((data)=> {
-                const singleTrainer=data[0]
-                updateTrainer(singleTrainer)
+            .then((trainerArray) => {
+                setTrainers(trainerArray)
             })
-        },
-        []
+        }, []
     )
 
-    const BackButton = () => {
-        navigate("/available")
-    }
-
    return (
-            <div className="pl-6 mt-32 text-3xl">
-                
-                    <header className="text-pink-brown 
-                    text-4xl"> {trainer.fullName}</header>
-                    <div>&nbsp;</div>
-                    <div>{trainer.address}</div>
-                    <div>{trainer.phoneNumber}</div>
-                    <div>{trainer.email}</div>
-                    <div className="mt-12">
-                    <button 
-                        onClick={(clickEvent) => BackButton  (clickEvent)} 
-                        className="bg-pink-brown rounded-md border-2 w-[100px] font-medium text-black  mb-3 mr-3">
-                        Back</button>                          
+            <div className="pl-6 mt-32 text-3xl flex flex-col gap-5">
+
+                {trainers.map((trainer) => {return (
+                    <div key= {trainer.id} className="border-2 p-3 w-1/2 flex">
+                        <div>
+                        <img className="w-40 border-pink-brown border-2" src={trainer.imgUrl} alt="No Image"/>
+                        </div>
+                        <div className="pl-10 pt-12">
+                            <header className="text-pink-brown 
+                                text-4xl"> {trainer.fullName}</header>
+                            <div>&nbsp;</div>
+                            <div>Phone Number: {trainer.phoneNumber}</div>
+                            <div>Email Address: {trainer.email}</div>
+                        </div>
                     </div>
+
+                )})}
+                
             </div>
 
         )

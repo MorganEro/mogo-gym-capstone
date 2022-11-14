@@ -37,8 +37,11 @@ export const TrainerCurrentSessionsList = ({ getAllSessions }) => {
     }
    
    return (
-   
-        <article className="flex flex-wrap mt-20">
+    <div>
+        <div>
+            <h1 className="mt-20 text-3xl pl-6 underline">Current Sessions</h1>
+        </div>
+        <article className="flex flex-wrap mt-8 pl-3">
             {
                 sessions?.trainerSessions?.map((trainerSession) => {
                     return(
@@ -60,6 +63,7 @@ export const TrainerCurrentSessionsList = ({ getAllSessions }) => {
                     )
                 })}
         </article> 
+    </div>
    )
     
 }

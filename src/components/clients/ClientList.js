@@ -63,7 +63,7 @@ export const ClientList = ({ searchTermState }) => {
             <div>&nbsp;</div>
             <div className="flex pl-6 gap-10 ">
                 <button  className= " border-pink-brown rounded border-solid border-2 w-12"onClick={(clickEvent) => sortButton  (clickEvent)}>A-Z</button>
-                <button className ="  border-pink-brown rounded border-solid border-2 w-12" onClick={(clickEvent) => sortButtonDescending  (clickEvent)}>Z-A</button>
+                <button className ="  border-pink-brown rounded border-solid border-2 w-12 " onClick={(clickEvent) => sortButtonDescending  (clickEvent)}>Z-A</button>
                 <button  className ="  border-pink-brown rounded border-solid border-2 w-12 " onClick={(clickEvent) => sortButtonEmail  (clickEvent)}>Email</button>
             </div>
             

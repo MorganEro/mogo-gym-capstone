@@ -28,7 +28,7 @@ export const TrainerNav = () => {
             </li>
             <li className="text white p-4 hover:text-pink-brown">  
                  <NavLink 
-                 className={({isActive}) => (isActive ? activeLink: normalLink)} to="/moSessions" >moSessions</NavLink>
+                 className={({isActive}) => (isActive ? activeLink: normalLink)} to="/availability" >Availability</NavLink>
                
             </li>
             <li className="text white p-4 hover:text-pink-brown">  
