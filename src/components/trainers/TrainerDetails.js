@@ -25,13 +25,15 @@ export const TrainerDetails = () => {
 
    return (
             <div className="pl-6 mt-32 text-3xl">
-                
-                    <header className="text-pink-brown 
+                <div>
+                <img className="w-40 border-pink-brown border-2" src={trainer.imgUrl} alt="No Image"/>
+            </div>
+                    <header className="text-pink-brown
                     text-4xl"> {trainer.fullName}</header>
                     <div>&nbsp;</div>
-                    <div>{trainer.address}</div>
-                    <div>{trainer.phoneNumber}</div>
-                    <div>{trainer.email}</div>
+                    <div>Address: {trainer.address}</div>
+                    <div>Phone Number: {trainer.phoneNumber}</div>
+                    <div>Email: {trainer.email}</div>
                     <div className="mt-12">
                     <button 
                         onClick={(clickEvent) => BackButton  (clickEvent)} 

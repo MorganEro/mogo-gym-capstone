@@ -4,8 +4,8 @@ import { useEffect, useState } from "react"
 import { AvailableSessionsList } from "../sessions/AvailableSessions"
 import { ClientSession } from "../sessions/ClientSession"
 import { LoginSessions } from "../sessions/LoginSessions"
-import { TrainerDetails } from "../trainers/TrainerDetails"
 import { Profile } from "../profile/Profile"
+import { ClientTrainerDetails } from "../trainers/ClientTrainerDetails"
 
 
 export const ClientViews= () => {
@@ -30,6 +30,7 @@ export const ClientViews= () => {
 		<Route path="/" element= {
 			<div className="mt-36">
 				<div className="text-4xl ml-10">Hello, {`${client.fullName}`}!</div>
+				<LoginSessions/>
 				<div>&nbsp;</div>
 				<div className="h-[450px] w-4/5 border-2 border-white ml-36 overflow-y-hidden">
 							<img src="/images/ropes.jpg" className="object-bottom"/>
@@ -41,7 +42,7 @@ export const ClientViews= () => {
 		<Route path="loginSessions" element={ <LoginSessions/> } />
 		<Route path="sessions" element={ <ClientSession /> } />
 		<Route path="profile" element={ <Profile /> } />
-		<Route path="sessions/:trainerId" element={ <TrainerDetails /> } />
+		<Route path="trainers" element={ <ClientTrainerDetails /> } />
 
 		
 	</Routes>

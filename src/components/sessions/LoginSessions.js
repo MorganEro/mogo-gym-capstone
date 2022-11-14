@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 
 export const LoginSessions =() => {
@@ -7,7 +8,7 @@ export const LoginSessions =() => {
 
 
     const [sessions, setSessions] = useState([])
-     
+
 
     useEffect (
         ()=> {
@@ -19,31 +20,25 @@ export const LoginSessions =() => {
         }, []
     )
     
-            const dayOfWeekName = new Date().toLocaleString(
-                'default', {weekday: 'long'})
+        const dayOfWeekName = new Date().toLocaleString(
+            'default', {weekday: 'long'})
        
-      
-            //  const results =() => {
-                const foundSession = sessions.filter((session) => {
-                    if (session.day === dayOfWeekName) {
-                        return (session)}
-                        // setSessions(session)}
-                    }
-                )
+         
       
     return (
-            <div>
-                {foundSession.day === dayOfWeekName?
-                 <div className="mt-32"> Your Session this {dayOfWeekName} is at {foundSession.time}.
-                </div>
-                :  
-                 <div className="mt-32"> You currently do not have any sessions scheduled this {dayOfWeekName}.
-                </div>
+          
+        <div className= "pt-5 pl-10 text-2xl">
+            {Array.isArray(sessions) && sessions.map((session) => {
+                if(session?.trainerSession?.day === dayOfWeekName){
+                    return (
+                        <div key={session.id}>
+                            You have a session scheduled today at {session?.trainerSession?.time}
+                        </div>)
                 }
+            
+        })}
 
-
-
-            </div>  
+        </div>
           )    
 
 }

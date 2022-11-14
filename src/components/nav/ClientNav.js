@@ -24,15 +24,14 @@ export const ClientNav = () => {
                  className={({isActive}) => (isActive ? activeLink: normalLink)} to="/sessions" 
                 >Your Current Sessions</NavLink>
             </li>
-            <li className="navbar__item navbar__loginSessions">
-                 <Link 
-                 className="navbar__link" to="/loginSessions" 
-                >Login Sessions</Link>
-            </li>
 
             <li className="text white p-4 hover:text-pink-brown">  
                  <NavLink 
                  className={({isActive}) => (isActive ? activeLink: normalLink)} to="/available" >Available Sessions</NavLink>    
+            </li>
+            <li className="text white p-4 hover:text-pink-brown">  
+                 <NavLink 
+                 className={({isActive}) => (isActive ? activeLink: normalLink)} to="/trainers" >Trainers</NavLink>    
             </li>
             <li className="text white p-4 hover:text-pink-brown">  
                  <NavLink 

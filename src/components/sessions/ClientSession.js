@@ -45,7 +45,7 @@ export const ClientSession = () => {
     return (
         
         <div className= "sessionsList">
-            <h2 className="pl-6 text-3xl pt-7 mt-20"> You currently have {sessions.length} sessions</h2>
+            <h2 className="pl-6 text-3xl pt-7 mt-20"> You currently have {sessions.length} session(s)</h2>
                     <>
                         {Array.isArray(sessions) && sessions.map((session) => {
                           return (

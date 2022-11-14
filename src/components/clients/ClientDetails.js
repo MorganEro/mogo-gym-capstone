@@ -23,12 +23,14 @@ export const ClientDetails = () => {
     }
    return (
             <div className="pl-6 mt-32 text-3xl">
-                
+                <div>
+                    <img className="w-40 border-pink-brown border-2" src={client.imgUrl} alt="profile picture"/>
+                    </div>
                     <header className="text-pink-brown text-4xl"> {client.fullName}</header>
                     <div>&nbsp;</div>
-                    <div>{client.address}</div>
-                    <div>{client.phoneNumber}</div>
-                    <div>{client.email}</div>
+                    <div>Address: {client.address}</div>
+                    <div>Phone Number: {client.phoneNumber}</div>
+                    <div>Email: {client.email}</div>
                     <div className="mt-12">
                     <button 
                         onClick={(clickEvent) => BackButton  (clickEvent)} 

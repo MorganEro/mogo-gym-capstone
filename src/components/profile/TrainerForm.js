@@ -23,7 +23,7 @@ export const TrainerForm = () => {
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
-        return fetch(`http://localhost:8088/users?id=${mogoUserObject.id}`,{
+        return fetch(`http://localhost:8088/users/${profile.id}`,{
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -34,9 +34,14 @@ export const TrainerForm = () => {
     }
 
     return (
+        
         <div className="pl-10 mt-32">
+            <div>
+                <img className="w-40 border-pink-brown border-2" src={profile.imgUrl} alt="profile picture"/>
+            </div>
+            <div>&nbsp;</div>
             <form className="">
-                <h2 className="text-pink-brown text-2xl">Edit Profile</h2>
+                <h2 className="text-pink-brown text-2xl">Profile</h2>
                 <div>&nbsp;</div>
                 <fieldset>
                     <div className="">
@@ -44,7 +49,7 @@ export const TrainerForm = () => {
                         <input
                             required autoFocus
                             type="text"
-                            className="text-black pl-3 rounded-sm "
+                            className="text-black pl-3 rounded-sm w-64"
                             value={profile.email}
                             onChange={
                                 (evt) => {
@@ -58,7 +63,7 @@ export const TrainerForm = () => {
                 <div>&nbsp;</div>
                 <fieldset>
                     <div className="">
-                        <label htmlFor="fullName">fullName: </label>
+                        <label htmlFor="fullName">Full Name: </label>
                         <input
                             required autoFocus
                             type="text"
@@ -80,7 +85,7 @@ export const TrainerForm = () => {
                         <input
                             required autoFocus
                             type="text"
-                            className="text-black pl-3 rounded-sm "
+                            className="text-black pl-3 rounded-sm w-64 "
                             value={profile.address}
                             onChange={
                                 (evt) => {
@@ -94,7 +99,7 @@ export const TrainerForm = () => {
                 <div>&nbsp;</div>
                 <fieldset>
                     <div className="">
-                        <label htmlFor="phoneNumber">PhoneNumber: </label>
+                        <label htmlFor="phoneNumber">Phone Number: </label>
                         <input
                             required autoFocus
                             type="text"
@@ -112,11 +117,11 @@ export const TrainerForm = () => {
                 <div>&nbsp;</div>
                 <fieldset>
                     <div className="">
-                        <label htmlFor="imgUrl">ImgUrl: </label>
+                        <label htmlFor="imgUrl">Profile Image Url: </label>
                         <input
                             required autoFocus
                             type="text"
-                            className="text-black pl-3 rounded-sm "
+                            className="text-black pl-3 rounded-sm w-80 "
                             value={profile.imgUrl}
                             onChange={
                                 (evt) => {

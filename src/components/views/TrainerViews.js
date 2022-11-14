@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import { ClientContainer } from "../clients/ClientContainer"
 import { ClientDetails } from "../clients/ClientDetails"
 import { Profile } from "../profile/Profile"
+import { TrainerLoginSessions } from "../sessions/TrainerLoginSessions"
 import { TrainerSessionView } from "../sessions/TrainerSessionView"
 import { TrainerDetails } from "../trainers/TrainerDetails"
 import { TrainerList } from "../trainers/TrainerList"
@@ -28,7 +29,12 @@ export const TrainerViews = () => {
         <Routes>    
             <Route path="/" element= {
                 <div className=" flex flex-col ">
-                    <div className="text-4xl mt-32 ml-10 "> Hello, {`${client.fullName}`}!</div>
+                    <div className="flex mt-32">
+                        <div className="text-3xl ml-10 "> Hello, {`${client.fullName}`}!</div>
+                        <div className="text-3xl ml-4">
+                        <TrainerLoginSessions/>
+                        </div>
+                    </div>
                     <div>&nbsp;</div>
                     <div className="h-[500px] w-4/5 border-2 border-white ml-10 overflow-y-hidden">
                         <img src="/images/image1.jpg" className="object-bottom"/>
@@ -39,7 +45,7 @@ export const TrainerViews = () => {
             }/>
             <Route path="clientList/:clientId" element={ <ClientDetails />
             }/>
-            <Route path="moSessions" element={ <TrainerSessionView /> } />
+            <Route path="availability" element={ <TrainerSessionView /> } />
             <Route path="profile" element={ <Profile /> } />
             <Route path="trainerList" element={ <TrainerList /> } />
             <Route path="trainerList/:trainerId" element={ <TrainerDetails /> } />
